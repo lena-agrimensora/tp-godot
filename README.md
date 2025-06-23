@@ -3,7 +3,7 @@
 - Estado del proyecto: En proceso.
 
 
-
+ 
 
 (cosas a agregar después al readme)
   Título e imagen de portada;
