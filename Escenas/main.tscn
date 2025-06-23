@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dhmlhjt2nwc50" path="res://Escenas/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cu1yepfetxqmd" path="res://Escenas/personaje.tscn" id="2_2ia52"]
 [ext_resource type="PackedScene" uid="uid://csvg02t50kcwq" path="res://Escenas/bandera.tscn" id="3_crgrh"]
-[ext_resource type="Script" uid="uid://baiskuysrmf0d" path="res://Escenas/bandera.gd" id="4_s2ilj"]
+[ext_resource type="Script" uid="uid://btjls62ecl8v2" path="res://Escenas/menú.gd" id="5_2ia52"]
 [ext_resource type="PackedScene" uid="uid://cc44gbniq4q5t" path="res://Escenas/enemigo.tscn" id="5_ktoa8"]
 
 [node name="Main" type="Node2D"]
@@ -15,18 +15,46 @@ position = Vector2(83, 76)
 [node name="Bandera" parent="." instance=ExtResource("3_crgrh")]
 position = Vector2(263, 598)
 scale = Vector2(0.0788551, 0.0523001)
-script = ExtResource("4_s2ilj")
 
 [node name="Enemigo" parent="." instance=ExtResource("5_ktoa8")]
 position = Vector2(1005, 589)
 
 [node name="Menu" type="Node2D" parent="."]
-visible = false
+process_mode = 3
+script = ExtResource("5_2ia52")
 
-[node name="ModalJugar" type="ColorRect" parent="Menu"]
-visible = false
-offset_right = 1263.0
-offset_bottom = 717.0
+[node name="Modaljugar" type="ColorRect" parent="Menu"]
+offset_left = -2.0
+offset_top = -6.0
+offset_right = 1157.0
+offset_bottom = 655.0
+
+[node name="Jugar" type="Button" parent="Menu/Modaljugar"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 138.0
+offset_right = 692.0
+offset_bottom = 182.0
+text = "Jugar"
+
+[node name="Volver a jugar" type="Button" parent="Menu/Modaljugar"]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 214.0
+offset_right = 691.0
+offset_bottom = 257.0
+text = "Volver a jugar"
+
+[node name="Salir" type="Button" parent="Menu/Modaljugar"]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 287.0
+offset_right = 692.0
+offset_bottom = 329.0
+text = "Salir
+"
 
 [connection signal="gana" from="Bandera" to="." method="_on_bandera_gana"]
 [connection signal="pierde" from="Bandera" to="." method="_on_bandera_pierde"]
+[connection signal="jugar" from="Menu" to="." method="_on_menu_jugar"]
+[connection signal="pressed" from="Menu/Modaljugar/Jugar" to="Menu" method="_on_jugar_pressed"]
