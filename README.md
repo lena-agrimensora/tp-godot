@@ -1,8 +1,12 @@
-<h1> Sistema de Registro </h1> 
+<h1> Trabajo práctico </h1> 
 
-- Estado del proyecto: En construcción.
+- Estado del proyecto: En proceso.
 
-    Título e imagen de portada;
+
+
+
+(cosas a agregar después al readme)
+  Título e imagen de portada;
     Insignias;
     Índice;
     Descripción del Proyecto;
